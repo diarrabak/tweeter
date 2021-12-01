@@ -1,0 +1,29 @@
+nav{
+    height: 120px;
+    width: 100%;
+    background-color: #4056A1;
+    color: #FFFF;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+nav span{
+    font-family: Bungee, "sans-serif";
+}
+nav div{
+    text-align: center;
+}
+
+nav i{
+    color: red;
+    margin-top: 0;
+  }
+
+  nav p{
+      margin-bottom: 0;
+  }
