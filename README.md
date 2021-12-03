@@ -1,6 +1,6 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page AJAX-based Twitter clone that uses JQuery, HTML5, CSS3 and SASS designed to make students skills in frontend of website.
+Tweeter is a simple, single-page AJAX-based Twitter clone that uses JQuery, HTML5, CSS3 and SASS helping students gain important skills in frontend of website.
 
 ## Getting Started
 
