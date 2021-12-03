@@ -1,0 +1,22 @@
+header {
+  height: 400px;
+  width: 35%;
+  background-color: #cc8800;
+  background-image: url("/images/tweet-background.png");
+  color: #ffffff;
+  margin-top: 5em; /*120px to leave space for the nav which 120px width*/
+
+  div {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h2 {
+    margin-top: 0;
+    font-weight: lighter;
+  }
+
+  @media screen and (max-width: 992px) {
+    width: 100%;
+  }
+}

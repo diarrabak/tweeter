@@ -2,6 +2,7 @@ form {
   width: 100%;
   margin: 0 auto;
 }
+
 label {
   text-align: left;
   width: 100%;
@@ -11,16 +12,25 @@ label {
   margin-bottom: 0.25em;
   margin-top: 1.25em;
 }
-
-.error{
-  width: 100%;
-  text-align: left;
-  color:red;
-}
 @media screen and (min-width: 992px) {
-  
   label {
     margin-top: 0;
+  }
+}
+
+.error {
+  width: 100%;
+  text-align: left;
+  color: red;
+  margin-bottom: 1.5em;
+  border: 3px solid red;
+  font: 1.25em bold;
+  padding: 0.5em;
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .error {
+    margin-top: 1em;
   }
 }
 
@@ -32,6 +42,7 @@ textarea {
   margin-bottom: 0.25em;
   height: 40px;
 }
+
 h2 {
   display: none;
 }
@@ -40,10 +51,12 @@ button {
   color: #ffff;
   background-color: #4056a1;
 }
+
 .counter,
 button {
   font-family: Bungee, "sans-serif";
 }
+
 form div,
 .article-header,
 .article-footer {
@@ -51,51 +64,55 @@ form div,
   justify-content: space-between;
   align-items: center;
 }
-article{
+
+article {
   border: 3px solid black;
   padding: 2em;
   margin-top: 2em;
 }
-article:hover{
+
+article:hover {
   box-shadow: 5px 5px 10px #8f90bd;
 }
+
 .article-footer {
   border-top: 3px solid black;
 }
 .article-footer p {
   margin-top: 0.25em;
 }
-.article-header{
-  /* margin-top: 2em; */
+.article-footer i {
+  color: #4156a0;
+  margin-left: 0.25em;
 }
+.article-footer i:hover {
+  color: #ca9824;
+}
+
 .article-header img {
   max-width: 100%;
   width: 30%;
   /* float: left; */
 }
-.avatar img+div, .user-name{
+
+.avatar img + div,
+.user-name {
   font-weight: bold;
 }
+
 .avatar {
   display: flex;
   align-items: center;
 }
-.content{
-margin-top: 2em;
-margin-bottom: 2em;
+
+.content {
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 .content h3 {
   text-align: left;
 }
-.user-name{
-  color: #C8CDE4;
-}
-.article-footer i{
-  color:#4156A0;
-  margin-left: 0.25em;
-}
 
-.article-footer i:hover{
-  color:#CA9824;
-
+.user-name {
+  color: #c8cde4;
 }

@@ -14,26 +14,16 @@ $(document).ready(function () {
     if (text === "" || text === null) {
       //If the user typed text is empty
       $(".error").text("Empty message!!").slideDown("slow").css({
-        color: "red",
-        "margin-bottom": "2em",
         display: "block",
-        border: "2px solid red",
-        font: "1.25em bold",
-        padding: "0.5em",
       });
       return;
     } else if (text.length > 140) {
       //If the user typed text is more than 140 characters
       $(".error")
-        .text("The text is long, more than 140 characters!")
+        .text("The text is too long, more than 140 characters!")
         .slideDown("slow")
         .css({
-          color: "red",
-          "margin-bottom": "2em",
           display: "block",
-          border: "2px solid red",
-          font: "1.25em bold",
-          padding: "0.5em",
         });
       return;
     }
@@ -68,10 +58,10 @@ $(document).ready(function () {
           renderTweets(sortedTweets);
         } else {
           //Case of new tweet creation
-          const tempTweet = []; //renderTweets requires an arrays of object
+          const tempTweet = []; //renderTweets requires an array of objects
           tempTweet.push(sortedTweets[sortedTweets.length - 1]); //The last element of the array is the new tweet
           // console.log(temp);
-          renderTweets(temp);
+          renderTweets(tempTweet);
         }
       },
       error: function () {
