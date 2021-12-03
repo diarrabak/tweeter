@@ -3,7 +3,8 @@ header{
     width: 100%;
     background-color: #cc8800;
     background-image: url('/images/tweet-background.png');
-    color: #FFFF;
+    color: #ffffff;
+    margin-top: 5em; /*120px to leave space for the nav which 120px width*/
 }
 
 header div{

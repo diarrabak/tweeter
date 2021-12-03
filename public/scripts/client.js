@@ -4,45 +4,34 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function () {
- // $(".timeago").text(timeago.format("2021-11-25"));
-
-/*   const tweetData = {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1461116232227,
-  }; */
- 
-
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
+  $("form").submit(function (event) {
+    event.preventDefault();
+    //Displaying error message if the the tweet content is empty or to long
+    const text= $("#tweet-text").val();
+    if(text===""||text===null){
+      alert("Empty message!!");
+      return;
+    } else if(text.length>140){
+      alert("Text too long!");
+      return;
     }
-  ]
+    
+    const tweetInfo = $("form").serialize();
+    $.ajax("/tweets/", { method: "POST", data: tweetInfo, success: function (results) {
+      console.log(results);
+    }
+  })
+
+  });
+
+  const loadTweets = function (tweetPath) {
+    $.ajax(tweetPath, { method: "GET" }).then(function (results) {
+      renderTweets(results);
+      // console.log(results);
+    });
+  };
+
+  loadTweets("/tweets/");
 
   const createTweetElement = function (tweet) {
     return ` 
@@ -67,15 +56,13 @@ $(document).ready(function () {
 </article>`;
   };
 
- /*  const $tweet = createTweetElement(tweetData);
-  console.log($tweet);
-  $('#tweets-container').append($tweet);*/
-
-  const renderTweets = function(tweets) {
-    const $formattedTweets=tweets.map(tweet=>createTweetElement(tweet));
-    console.log($formattedTweets);
-    $formattedTweets.map($formattedTweet=> $('#tweets-container').append($formattedTweet));
+  const renderTweets = function (tweets) {
+    const $formattedTweets = tweets.map((tweet) => createTweetElement(tweet));
+    //console.log($formattedTweets);
+    $formattedTweets.map(($formattedTweet) =>
+      $("#tweets-container").append($formattedTweet)
+    );
   };
 
-  renderTweets(data);
+  // renderTweets(data);
 });
