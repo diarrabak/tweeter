@@ -35,10 +35,6 @@ strong {
 main {
     margin: 0 auto;
   }
-
-  main {
-    width: 45%;
-  }
 }
 @media screen and (max-width: 992px) {
   header,
@@ -48,6 +44,7 @@ main {
 }
 
 main {
+  width: 45%;
   margin: 0 auto;
   text-align: center;
   background-color: #f4f1ec;
