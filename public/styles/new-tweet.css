@@ -11,6 +11,19 @@ label {
   margin-bottom: 0.25em;
   margin-top: 1.25em;
 }
+
+.error{
+  width: 100%;
+  text-align: left;
+  color:red;
+}
+@media screen and (min-width: 992px) {
+  
+  label {
+    margin-top: 0;
+  }
+}
+
 textarea {
   width: 100%;
   border: 0;
